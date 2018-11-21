@@ -10,28 +10,28 @@ import Foundation
 import UIKit
 
 class ColorSchemeManager {
-    
+
     // Singleton Instance
     static let shared = ColorSchemeManager()
 
     // Properties
-    private let ud = UserDefaults.standard
+    private let userDefaults = UserDefaults.standard
     var currentColorScheme: ColorScheme = ColorSchemeType(rawValue: 0)!.instance()
-    
+
     // Private initializer
-    private init(){
+    private init() {
         reloadColorScheme()
     }
-    
+
     // MARK: - Methods
     func reloadColorScheme() {
-        if let schemeType = ColorSchemeType(rawValue: ud.integer(forKey: UserDefaults.Keys.color)) {
+        if let schemeType = ColorSchemeType(rawValue: userDefaults.integer(forKey: UserDefaults.Keys.color)) {
             self.currentColorScheme = schemeType.instance()
         }
     }
-    
+
     func saveColorScheme(to schemeType: ColorSchemeType) {
-        ud.set(schemeType.rawValue, forKey: UserDefaults.Keys.color)
+        userDefaults.set(schemeType.rawValue, forKey: UserDefaults.Keys.color)
         reloadColorScheme()
     }
 }

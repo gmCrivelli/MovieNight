@@ -19,7 +19,7 @@ protocol ColorScheme {
     var statusBarStyle: UIStatusBarStyle { get }
 }
 
-fileprivate class LightColorScheme: ColorScheme {
+private class LightColorScheme: ColorScheme {
     var bgColor: UIColor { return #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0) }
     var textColor: UIColor { return #colorLiteral(red: 0.1298420429, green: 0.1298461258, blue: 0.1298439503, alpha: 1) }
     var iconColor: UIColor { return #colorLiteral(red: 0, green: 0.4199020742, blue: 0.7315359748, alpha: 1) }
@@ -29,7 +29,7 @@ fileprivate class LightColorScheme: ColorScheme {
     var statusBarStyle: UIStatusBarStyle { return .default }
 }
 
-fileprivate class DarkColorScheme: ColorScheme {
+private class DarkColorScheme: ColorScheme {
     var bgColor: UIColor { return #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1) }
     var textColor: UIColor { return #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1) }
     var iconColor: UIColor { return #colorLiteral(red: 1, green: 0.6039383411, blue: 0, alpha: 1) }
@@ -39,7 +39,7 @@ fileprivate class DarkColorScheme: ColorScheme {
     var statusBarStyle: UIStatusBarStyle { return .lightContent }
 }
 
-fileprivate class NapolitanColorScheme: ColorScheme {
+private class NapolitanColorScheme: ColorScheme {
     var bgColor: UIColor { return #colorLiteral(red: 1, green: 0.9275574144, blue: 0.8304729913, alpha: 1) }
     var textColor: UIColor { return #colorLiteral(red: 0.415823939, green: 0.2310154543, blue: 0, alpha: 1) }
     var iconColor: UIColor { return #colorLiteral(red: 0.9219475298, green: 0.4832788596, blue: 0.6509387597, alpha: 1) }
@@ -53,7 +53,7 @@ enum ColorSchemeType: Int {
     case light = 0
     case dark = 1
     case napolitan = 2
-    
+
     func instance() -> ColorScheme {
         switch self {
         case .light:

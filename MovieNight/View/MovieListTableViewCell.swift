@@ -14,7 +14,7 @@ class MovieListTableViewCell: UITableViewCell {
     @IBOutlet weak var summaryLbl: UILabel!
     @IBOutlet weak var ratingLbl: UILabel!
     @IBOutlet weak var posterImg: UIImageView!
-    
+
     // MARK: - Super Methods
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,7 +26,7 @@ class MovieListTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+
     // MARK: - Methods
     func prepare(with movie: CDMovie, colorScheme: ColorScheme) {
 
@@ -37,23 +37,22 @@ class MovieListTableViewCell: UITableViewCell {
         } else {
             self.summaryLbl.text = "Sem sinopse!"
         }
-        
+
         if movie.rating >= 0.0 {
             self.ratingLbl.text = "⭐️ \(movie.rating)/10.0"
-        }
-        else {
+        } else {
             self.ratingLbl.text = "⭐️ Sem nota!"
         }
-        
+
         if let imageData = movie.image {
             self.posterImg.image = UIImage(data: imageData)
         } else {
             self.posterImg.image = UIImage(named: "cinema")
         }
-        
+
         self.setupColorScheme(with: colorScheme)
     }
-    
+
     private func setupColorScheme(with colorScheme: ColorScheme) {
         titleLbl.textColor = colorScheme.textColor
         summaryLbl.textColor = colorScheme.textColor

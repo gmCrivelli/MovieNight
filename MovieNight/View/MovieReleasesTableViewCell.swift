@@ -11,10 +11,10 @@ import UIKit
 class MovieReleasesTableViewCell: UITableViewCell {
 
     var movies: [JMovie] = []
-    
+
     @IBOutlet weak var lblReleases: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
-    
+
     // MARK: - Super Methods
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,7 +24,7 @@ class MovieReleasesTableViewCell: UITableViewCell {
             collectionView.collectionViewLayout = layout
         }
     }
-    
+
     // MARK: Methods
     func prepare(with movie: JMovie, colorScheme: ColorScheme) {
         guard let items = movie.items else { return }
@@ -32,7 +32,7 @@ class MovieReleasesTableViewCell: UITableViewCell {
         self.collectionView.reloadData()
         self.setupColorScheme(with: colorScheme)
     }
-    
+
     private func setupColorScheme(with colorScheme: ColorScheme) {
         lblReleases.textColor = colorScheme.textColor
         backgroundColor = colorScheme.bgColor
@@ -40,20 +40,22 @@ class MovieReleasesTableViewCell: UITableViewCell {
 }
 
 extension MovieReleasesTableViewCell: UICollectionViewDataSource {
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return movies.count
     }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "releasesCvCell", for: indexPath) as? MovieReleaseCollectionViewCell {
-            
+
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "releasesCvCell",
+                                                         for: indexPath) as? MovieReleaseCollectionViewCell {
+
             cell.prepareForReuse()
             cell.prepare(with: movies[indexPath.item])
             return cell
         }
-        
+
         return UICollectionViewCell()
     }
 }

@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIImageView {
-    
+
     /// Colorize ImageView
     func setColor(to color: UIColor) {
         let templateImage = self.image?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)

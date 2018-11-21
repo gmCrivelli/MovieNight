@@ -19,44 +19,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ajustes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bWj-zB-d7w">
-                                <rect key="frame" x="127" y="296" width="121" height="46"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="38"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="SJK-Eo-CLQ">
-                                <rect key="frame" x="73" y="235" width="229" height="29"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="center" spacing="38" translatesAutoresizingMaskIntoConstraints="NO" id="Bdc-jl-sCY">
+                                <rect key="frame" x="46" y="87" width="242" height="239"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="Light"/>
-                                    <segment title="Dark"/>
-                                    <segment title="Napolitano"/>
-                                </segments>
-                                <connections>
-                                    <action selector="colorChanged:" destination="fpU-rN-4ZK" eventType="valueChanged" id="iO3-XO-3sg"/>
-                                </connections>
-                            </segmentedControl>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vC5-Ct-aXG">
-                                <rect key="frame" x="163" y="141" width="49" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="autoplayChanged:" destination="fpU-rN-4ZK" eventType="valueChanged" id="iA8-Tt-sbB"/>
-                                </connections>
-                            </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Autoplay" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z23-VV-gHw">
-                                <rect key="frame" x="127" y="87" width="107" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ajustes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bWj-zB-d7w">
+                                        <rect key="frame" x="61" y="0.0" width="120.5" height="45.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="38"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="SJK-Eo-CLQ">
+                                        <rect key="frame" x="0.0" y="83.5" width="242" height="29"/>
+                                        <segments>
+                                            <segment title="Light"/>
+                                            <segment title="Dark"/>
+                                            <segment title="Napolitano"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="colorChanged:" destination="fpU-rN-4ZK" eventType="valueChanged" id="iO3-XO-3sg"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Iniciar trailers automaticamente" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z23-VV-gHw">
+                                        <rect key="frame" x="1" y="149.5" width="240" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vC5-Ct-aXG">
+                                        <rect key="frame" x="96.5" y="208" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="autoplayChanged:" destination="fpU-rN-4ZK" eventType="valueChanged" id="iA8-Tt-sbB"/>
+                                        </connections>
+                                    </switch>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="bWj-zB-d7w" firstAttribute="centerY" secondItem="7uN-zh-Cx7" secondAttribute="centerY" id="4g3-rw-7Cx"/>
-                            <constraint firstItem="bWj-zB-d7w" firstAttribute="centerX" secondItem="7uN-zh-Cx7" secondAttribute="centerX" id="Yz3-9o-YP1"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="7uN-zh-Cx7"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Ajustes" image="settings" id="hd4-Yw-uYp"/>
@@ -479,10 +478,10 @@
             </objects>
             <point key="canvasLocation" x="1474" y="-564"/>
         </scene>
-        <!--Editar Filme-->
+        <!--Title-->
         <scene sceneID="Pfj-IT-VFH">
             <objects>
-                <viewController title="Editar Filme" id="Fwq-an-kwv" customClass="EditAddMovieViewController" customModule="MovieNight" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Fwq-an-kwv" customClass="EditAddMovieViewController" customModule="MovieNight" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mbQ-o7-taX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -694,7 +693,7 @@
                         <viewLayoutGuide key="safeArea" id="JYv-pN-ToN"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="qUo-R8-owW">
-                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="done" id="HH4-AY-dL2">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="HH4-AY-dL2">
                             <connections>
                                 <action selector="doneBtnPressed:" destination="Fwq-an-kwv" id="3rs-qT-Yh7"/>
                             </connections>

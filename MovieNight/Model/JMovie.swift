@@ -16,7 +16,7 @@ struct JMovie: Codable {
     let image: String?
     let itemType: ItemType?
     let items: [JMovie]?
-    
+
     enum CodingKeys: String, CodingKey {
         case title
         case categories
@@ -30,6 +30,6 @@ struct JMovie: Codable {
 }
 
 enum ItemType: String, Codable {
-    case movie = "movie"
-    case list = "list"
+    case movie
+    case list
 }

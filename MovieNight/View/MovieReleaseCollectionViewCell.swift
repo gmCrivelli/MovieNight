@@ -9,14 +9,13 @@
 import UIKit
 
 class MovieReleaseCollectionViewCell: UICollectionViewCell {
-    
+
     @IBOutlet weak var posterImg: UIImageView!
-    
+
     func prepare(with movie: JMovie) {
         if let imageName = movie.image {
             self.posterImg.image = UIImage(named: imageName)
-        }
-        else {
+        } else {
             self.posterImg.image = nil
         }
     }

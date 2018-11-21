@@ -15,16 +15,15 @@ extension UIImage {
         let height = self.size.height
         if width > height {
             newSize = CGSize(width: maxSide, height: maxSide * (height / width))
-        }
-        else {
+        } else {
             newSize = CGSize(width: maxSide * (width / height), height: maxSide)
         }
-        
+
         UIGraphicsBeginImageContext(newSize)
         self.draw(in: CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height))
         let smallImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        
+
         return smallImage
     }
 }

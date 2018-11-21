@@ -7,4 +7,6 @@ target 'MovieNight' do
 
   # Pods for MovieNight
   pod 'SwiftLint'
+  pod 'Cartography', '~> 3.0'
+  pod 'iOSSnapshotTestCase'
 end

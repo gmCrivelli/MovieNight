@@ -10,69 +10,70 @@ import UIKit
 
 class AjustesViewController: UIViewController {
 
-    //MARK: - IBOutlets
+    // MARK: - IBOutlets
     @IBOutlet weak var lblAutoplay: UILabel!
     @IBOutlet weak var lblAjustes: UILabel!
     @IBOutlet weak var segColor: UISegmentedControl!
     @IBOutlet weak var swAutoplay: UISwitch!
-    
-    //MARK: - Properties
-    let ud = UserDefaults.standard
-    
+
+    // MARK: - Properties
+    let userDefaults = UserDefaults.standard
+
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return csManager.currentColorScheme.statusBarStyle
     }
-    
-    //MARK: - Super Methods
+
+    // MARK: - Super Methods
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.setupFromBundle()
         self.registerForNotifications()
         self.reloadColor()
     }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
+
+    deinit {
         NotificationCenter.default.removeObserver(self)
     }
-    
-    //MARK: - Methods
+
+    // MARK: - Methods
     func setupFromBundle() {
-        swAutoplay.setOn(ud.bool(forKey: UserDefaults.Keys.autoplay), animated: false)
-        segColor.selectedSegmentIndex = ud.integer(forKey: UserDefaults.Keys.color)
+        swAutoplay.setOn(userDefaults.bool(forKey: UserDefaults.Keys.autoplay), animated: false)
+        segColor.selectedSegmentIndex = userDefaults.integer(forKey: UserDefaults.Keys.color)
     }
-    
-    
+
     /// Register the VC for notifications, where the UI will have to be updated
     func registerForNotifications() {
-        NotificationCenter.default.addObserver(self, selector: #selector(self.reloadColor), name: NSNotification.Name(UNKeys.colorUpdate), object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(self.reloadColor),
+                                               name: NSNotification.Name(UNKeys.colorUpdate),
+                                               object: nil)
     }
-    
+
     @objc func reloadColor() {
         csManager.reloadColorScheme()
-        
+
         self.view.backgroundColor = csManager.currentColorScheme.bgColor
-        
+
         lblAutoplay.textColor = csManager.currentColorScheme.textColor
         lblAjustes.textColor = csManager.currentColorScheme.textColor
         segColor.tintColor = csManager.currentColorScheme.iconColor
         swAutoplay.tintColor = csManager.currentColorScheme.iconColor
-        
+
         self.view.window?.tintColor = csManager.currentColorScheme.iconColor
-        
+
         self.tabBarController?.tabBar.barTintColor = csManager.currentColorScheme.barColor
         self.tabBarController?.tabBar.unselectedItemTintColor = csManager.currentColorScheme.unselectedColor
-        
+
         setNeedsStatusBarAppearanceUpdate()
     }
-    
-    //MARK: - IBActions
+
+    // MARK: - IBActions
     @IBAction func autoplayChanged(_ sender: UISwitch) {
-        ud.set(sender.isOn, forKey: UserDefaults.Keys.autoplay)
+        userDefaults.set(sender.isOn, forKey: UserDefaults.Keys.autoplay)
     }
-    
+
     @IBAction func colorChanged(_ sender: UISegmentedControl) {
-        ud.set(sender.selectedSegmentIndex, forKey: UserDefaults.Keys.color)
+        userDefaults.set(sender.selectedSegmentIndex, forKey: UserDefaults.Keys.color)
         reloadColor()
     }
 }

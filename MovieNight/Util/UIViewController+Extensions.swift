@@ -10,20 +10,21 @@ import UIKit
 import CoreData
 
 extension UIViewController {
-    
+
     var csManager: ColorSchemeManager {
         return ColorSchemeManager.shared
     }
-    
-    var appDelegate: AppDelegate {
-        return UIApplication.shared.delegate as! AppDelegate
+
+    var appDelegate: AppDelegate? {
+        return UIApplication.shared.delegate as? AppDelegate
     }
-    
-    var context: NSManagedObjectContext {
-        return appDelegate.persistentContainer.viewContext
+
+    var context: NSManagedObjectContext? {
+        return appDelegate?.persistentContainer.viewContext
     }
-    
+
     func saveContext() {
+        guard let context = context else { return }
         do {
             if context.hasChanges {
                 try context.save()

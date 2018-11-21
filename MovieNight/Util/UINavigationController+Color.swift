@@ -9,7 +9,7 @@
 import UIKit
 
 extension UINavigationController {
-    
+
     override open var preferredStatusBarStyle: UIStatusBarStyle {
         return ColorSchemeManager.shared.currentColorScheme.statusBarStyle
     }
