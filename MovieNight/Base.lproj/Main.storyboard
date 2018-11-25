@@ -296,6 +296,9 @@
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7gS-px-V2C">
                                 <rect key="frame" x="161" y="189.5" width="53" height="53"/>
                                 <state key="normal" image="play"/>
+                                <connections>
+                                    <action selector="playTrailerPressed:" destination="Q8W-EW-gXB" eventType="touchUpInside" id="KA6-Bz-ESe"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monty Python and the Holy Grail" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="ELj-j9-ayt">
                                 <rect key="frame" x="16" y="328" width="343" height="32"/>
@@ -464,6 +467,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="btnPlay" destination="7gS-px-V2C" id="qE3-Rn-HAR"/>
                         <outlet property="btnReminder" destination="cLn-EI-aPL" id="J0A-cX-P9q"/>
                         <outlet property="categoriesLbl" destination="Rgj-P2-GMZ" id="j7S-ra-X0g"/>
                         <outlet property="durationLbl" destination="mo5-6r-sde" id="cwb-cb-aHw"/>

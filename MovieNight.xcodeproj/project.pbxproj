@@ -25,11 +25,11 @@
 		FE71D4B2219666B600967257 /* EditAddMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE71D4B1219666B600967257 /* EditAddMovieViewController.swift */; };
 		FE71D4B4219666C800967257 /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE71D4B3219666C800967257 /* MovieViewController.swift */; };
 		FE71D4B6219668C100967257 /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE71D4B5219668C100967257 /* SummaryView.swift */; };
+		FEA395E921A6292C0028D6B8 /* REST.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA395E821A6292C0028D6B8 /* REST.swift */; };
 		FEB16089219F6C650053CD0D /* UNKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB16088219F6C650053CD0D /* UNKeys.swift */; };
 		FEB1608B219F7FDE0053CD0D /* UIImage+SetColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB1608A219F7FDE0053CD0D /* UIImage+SetColor.swift */; };
 		FEB1608E219FAAF70053CD0D /* MovieNight.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FEB1608C219FAAF70053CD0D /* MovieNight.xcdatamodeld */; };
 		FEB16090219FAD850053CD0D /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB1608F219FAD850053CD0D /* UIViewController+Extensions.swift */; };
-		FEB16092219FADDB0053CD0D /* CDMovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB16091219FADDB0053CD0D /* CDMovieService.swift */; };
 		FEB16094219FB4E40053CD0D /* UIImage+Resized.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB16093219FB4E40053CD0D /* UIImage+Resized.swift */; };
 		FEB16096219FD2B50053CD0D /* Date+Formatted.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB16095219FD2B50053CD0D /* Date+Formatted.swift */; };
 		FEEEB19B219B47F100A1A2D8 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FEEEB19A219B47F100A1A2D8 /* Settings.bundle */; };
@@ -60,11 +60,11 @@
 		FE71D4B1219666B600967257 /* EditAddMovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAddMovieViewController.swift; sourceTree = "<group>"; };
 		FE71D4B3219666C800967257 /* MovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
 		FE71D4B5219668C100967257 /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
+		FEA395E821A6292C0028D6B8 /* REST.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = REST.swift; sourceTree = "<group>"; };
 		FEB16088219F6C650053CD0D /* UNKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UNKeys.swift; sourceTree = "<group>"; };
 		FEB1608A219F7FDE0053CD0D /* UIImage+SetColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+SetColor.swift"; sourceTree = "<group>"; };
 		FEB1608D219FAAF70053CD0D /* MovieNight.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MovieNight.xcdatamodel; sourceTree = "<group>"; };
 		FEB1608F219FAD850053CD0D /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
-		FEB16091219FADDB0053CD0D /* CDMovieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDMovieService.swift; sourceTree = "<group>"; };
 		FEB16093219FB4E40053CD0D /* UIImage+Resized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Resized.swift"; sourceTree = "<group>"; };
 		FEB16095219FD2B50053CD0D /* Date+Formatted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Formatted.swift"; sourceTree = "<group>"; };
 		FEEEB19A219B47F100A1A2D8 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
@@ -173,8 +173,8 @@
 			isa = PBXGroup;
 			children = (
 				FE3E87D3219A0D46007DB82A /* ColorSchemeManager.swift */,
+				FEA395E821A6292C0028D6B8 /* REST.swift */,
 				FE41C34621922B03000034FC /* JMovieService.swift */,
-				FEB16091219FADDB0053CD0D /* CDMovieService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -339,7 +339,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE3E87D6219A0DE1007DB82A /* UserDefaults+Keys.swift in Sources */,
-				FEB16092219FADDB0053CD0D /* CDMovieService.swift in Sources */,
 				FEB16094219FB4E40053CD0D /* UIImage+Resized.swift in Sources */,
 				FE3E87D8219A145E007DB82A /* ColorScheme.swift in Sources */,
 				FE41C34A21922E61000034FC /* CustomError.swift in Sources */,
@@ -357,6 +356,7 @@
 				FEEEB1A8219B6DE500A1A2D8 /* UINavigationController+Color.swift in Sources */,
 				FE41C33E219224E8000034FC /* JMovie.swift in Sources */,
 				FE41C344219229C3000034FC /* MovieListTableViewController.swift in Sources */,
+				FEA395E921A6292C0028D6B8 /* REST.swift in Sources */,
 				FE41C34C219234E3000034FC /* MovieReleasesTableViewCell.swift in Sources */,
 				FEB1608B219F7FDE0053CD0D /* UIImage+SetColor.swift in Sources */,
 				FEB1608E219FAAF70053CD0D /* MovieNight.xcdatamodeld in Sources */,

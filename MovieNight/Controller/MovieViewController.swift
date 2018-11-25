@@ -8,6 +8,7 @@
 
 import UIKit
 import UserNotifications
+import AVFoundation
 
 @IBDesignable
 class MovieViewController: UIViewController {
@@ -21,10 +22,12 @@ class MovieViewController: UIViewController {
     @IBOutlet weak var posterImg: UIImageView!
     @IBOutlet weak var gradientImg: UIImageView!
     @IBOutlet weak var btnReminder: UIButton!
+    @IBOutlet weak var btnPlay: UIButton!
 
     // MARK: - Properties
     var movie: CDMovie?
     var alert: UIAlertController?
+    var playerLayer: AVPlayerLayer?
 
     lazy var datePicker: UIDatePicker = {
         let datePicker = UIDatePicker()
@@ -43,10 +46,17 @@ class MovieViewController: UIViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
+        super.viewWillAppear(animated)
         self.registerForNotifications()
         self.reloadColor()
         self.setupView()
+        self.reloadAutoplay()
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.playerLayer?.removeFromSuperlayer()
+        self.playerLayer = nil
     }
 
     deinit {
@@ -85,6 +95,9 @@ class MovieViewController: UIViewController {
             } else {
                 self.posterImg.image = UIImage(named: "cinema")
             }
+
+            btnPlay.isHidden = false
+            gradientImg.isHidden = false
         }
     }
 
@@ -117,10 +130,60 @@ class MovieViewController: UIViewController {
     }
 
     @objc func reloadAutoplay() {
-        // TODO!
+        let autoplayIsOn = UserDefaults.standard.bool(forKey: UserDefaults.Keys.autoplay)
+        if autoplayIsOn && self.playerLayer == nil {
+            self.playTrailerPressed(self)
+        }
+    }
+
+    func loadMovieTrailer(_ url: URL) {
+
+        let player = AVPlayer(playerItem: AVPlayerItem(asset: AVAsset(url: url),
+                                                       automaticallyLoadedAssetKeys: ["playable"]))
+
+        let playerLayer = AVPlayerLayer(player: player)
+        playerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+        playerLayer.frame = posterImg.bounds
+        posterImg.layer.addSublayer(playerLayer)
+        playerLayer.player?.play()
+        playerLayer.player?.pause()
+        self.playerLayer = playerLayer
+
+        self.gradientImg.isHidden = true
+        self.btnPlay.isHidden = true
+    }
+
+    // Display an alert to notify user that there was an error when showing the trailer
+    func displayError(_ error: APIError) {
+        var message = ""
+        switch error {
+        case .internalError:
+            message = "Erro interno, entre em contato com os administradores."
+        case .notFound:
+            message = "Trailer não encontrado!"
+        default:
+            message = "Falha ao buscar dados no servidor."
+        }
+
+        // Create the alert controller.
+        let alert = UIAlertController(title: "Erro",
+                                      message: message,
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 
     // MARK: - IBActions
+    @IBAction func playTrailerPressed(_ sender: Any) {
+        REST.trailerUrl(from: movie?.title ?? "",
+                  onComplete: { [weak self] (videoUrl) in
+                    DispatchQueue.main.async {
+                        self?.loadMovieTrailer(videoUrl)
+                    }
+            }, onError: { [weak self] (error: APIError) in
+                self?.displayError(error)
+        })
+    }
 
     @IBAction func reminderBtnPressed(_ sender: Any) {
         // Create the alert controller.
