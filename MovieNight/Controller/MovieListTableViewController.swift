@@ -189,7 +189,10 @@ class MovieListTableViewController: UITableViewController {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showMovie", let destination = segue.destination as? MovieViewController {
+//        if segue.identifier == "showMovie", let destination = segue.destination as? MovieViewController {
+//            destination.movie = self.selectedMovie
+//        }        
+        if segue.identifier == "showViewCodeMovie", let destination = segue.destination as? ViewCodeMovieVC {
             destination.movie = self.selectedMovie
         }
     }
@@ -243,7 +246,7 @@ class MovieListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //guard let type = movies[indexPath.row].itemType, type == .movie else { return }
         self.selectedMovie = movies[indexPath.row]
-        self.performSegue(withIdentifier: "showMovie", sender: nil)
+        self.performSegue(withIdentifier: "showViewCodeMovie", sender: nil)
     }
 }
 

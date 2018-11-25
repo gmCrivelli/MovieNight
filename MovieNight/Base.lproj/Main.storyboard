@@ -251,6 +251,7 @@
                     <connections>
                         <outlet property="bufferView" destination="4TM-0n-TUa" id="GFH-G9-Lsr"/>
                         <segue destination="Q8W-EW-gXB" kind="show" identifier="showMovie" id="chu-hf-i4U"/>
+                        <segue destination="oMG-Vk-xQU" kind="show" identifier="showViewCodeMovie" id="Z3t-fi-yPN"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lHt-ZV-nCO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -275,6 +276,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G4i-np-Cwg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-978" y="-156"/>
+        </scene>
+        <!--View Code MovieVC-->
+        <scene sceneID="TKQ-Rx-Dw7">
+            <objects>
+                <viewController id="oMG-Vk-xQU" customClass="ViewCodeMovieVC" customModule="MovieNight" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Gun-wI-yE1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="n0M-pc-aJT"/>
+                    </view>
+                    <connections>
+                        <segue destination="Fwq-an-kwv" kind="show" identifier="showEditorSegue" id="hdG-ah-WLE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vf0-WQ-66n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1473" y="-1300"/>
         </scene>
         <!--Filme-->
         <scene sceneID="0Cm-Nl-x4k">
@@ -318,7 +337,7 @@
                                 <color key="textColor" red="0.99215686270000003" green="0.80000000000000004" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Q1u-Fh-Edb" customClass="SummaryView" customModule="MovieNight" customModuleProvider="target">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Q1u-Fh-Edb">
                                 <rect key="frame" x="16" y="433.5" width="343" height="80"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sinopse:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gkv-7M-sLE">
@@ -396,7 +415,6 @@
                             <constraint firstItem="Q1u-Fh-Edb" firstAttribute="trailing" secondItem="ELj-j9-ayt" secondAttribute="trailing" id="f2W-UF-kGy"/>
                             <constraint firstItem="cLn-EI-aPL" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Q1u-Fh-Edb" secondAttribute="bottom" constant="16" id="f8D-ep-EdW"/>
                             <constraint firstAttribute="trailing" secondItem="iUg-ex-oG7" secondAttribute="trailing" id="i1I-N6-kUG"/>
-                            <constraint firstItem="Q1u-Fh-Edb" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="PZw-8a-Pj0" secondAttribute="bottom" id="iKe-EY-AeV"/>
                             <constraint firstItem="mo5-6r-sde" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Rgj-P2-GMZ" secondAttribute="trailing" id="kmV-Wg-8CJ"/>
                             <constraint firstItem="Q1u-Fh-Edb" firstAttribute="top" secondItem="xln-Nr-S3h" secondAttribute="bottom" constant="16" id="ksH-Jn-Rpc"/>
                             <constraint firstItem="ELj-j9-ayt" firstAttribute="top" secondItem="iUg-ex-oG7" secondAttribute="bottom" constant="12" id="mZX-8h-dmr"/>
@@ -739,6 +757,6 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="vJE-sj-NHC"/>
+        <segue reference="hdG-ah-WLE"/>
     </inferredMetricsTieBreakers>
 </document>

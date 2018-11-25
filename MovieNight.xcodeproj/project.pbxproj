@@ -25,6 +25,10 @@
 		FE71D4B2219666B600967257 /* EditAddMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE71D4B1219666B600967257 /* EditAddMovieViewController.swift */; };
 		FE71D4B4219666C800967257 /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE71D4B3219666C800967257 /* MovieViewController.swift */; };
 		FE71D4B6219668C100967257 /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE71D4B5219668C100967257 /* SummaryView.swift */; };
+		FE9EC7B321AAFD79001BDF38 /* ViewCodeMovieVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9EC7B221AAFD79001BDF38 /* ViewCodeMovieVC.swift */; };
+		FE9EC7B521AB003F001BDF38 /* MovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9EC7B421AB003F001BDF38 /* MovieView.swift */; };
+		FE9EC7B821AB00A5001BDF38 /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9EC7B721AB00A5001BDF38 /* CodeView.swift */; };
+		FE9EC7BA21AB013F001BDF38 /* AppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9EC7B921AB013F001BDF38 /* AppStyle.swift */; };
 		FEA395E921A6292C0028D6B8 /* REST.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA395E821A6292C0028D6B8 /* REST.swift */; };
 		FEB16089219F6C650053CD0D /* UNKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB16088219F6C650053CD0D /* UNKeys.swift */; };
 		FEB1608B219F7FDE0053CD0D /* UIImage+SetColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB1608A219F7FDE0053CD0D /* UIImage+SetColor.swift */; };
@@ -60,6 +64,10 @@
 		FE71D4B1219666B600967257 /* EditAddMovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAddMovieViewController.swift; sourceTree = "<group>"; };
 		FE71D4B3219666C800967257 /* MovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
 		FE71D4B5219668C100967257 /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
+		FE9EC7B221AAFD79001BDF38 /* ViewCodeMovieVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCodeMovieVC.swift; sourceTree = "<group>"; };
+		FE9EC7B421AB003F001BDF38 /* MovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieView.swift; sourceTree = "<group>"; };
+		FE9EC7B721AB00A5001BDF38 /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
+		FE9EC7B921AB013F001BDF38 /* AppStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStyle.swift; sourceTree = "<group>"; };
 		FEA395E821A6292C0028D6B8 /* REST.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = REST.swift; sourceTree = "<group>"; };
 		FEB16088219F6C650053CD0D /* UNKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UNKeys.swift; sourceTree = "<group>"; };
 		FEB1608A219F7FDE0053CD0D /* UIImage+SetColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+SetColor.swift"; sourceTree = "<group>"; };
@@ -122,8 +130,8 @@
 		FE41C327219220BF000034FC /* MovieNight */ = {
 			isa = PBXGroup;
 			children = (
-				FE41C34821922E50000034FC /* Util */,
 				FE41C34521922ADC000034FC /* Services */,
+				FE41C34821922E50000034FC /* Util */,
 				FE41C33A219224C3000034FC /* Model */,
 				FE41C33B219224CC000034FC /* View */,
 				FE41C33C219224D6000034FC /* Controller */,
@@ -154,6 +162,7 @@
 				FE41C34B219234E3000034FC /* MovieReleasesTableViewCell.swift */,
 				FE41C34D2192365C000034FC /* MovieReleaseCollectionViewCell.swift */,
 				FE71D4B5219668C100967257 /* SummaryView.swift */,
+				FE9EC7B421AB003F001BDF38 /* MovieView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -165,6 +174,7 @@
 				FE41C343219229C3000034FC /* MovieListTableViewController.swift */,
 				FE71D4B1219666B600967257 /* EditAddMovieViewController.swift */,
 				FE71D4B3219666C800967257 /* MovieViewController.swift */,
+				FE9EC7B221AAFD79001BDF38 /* ViewCodeMovieVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -183,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				FE41C34921922E61000034FC /* CustomError.swift */,
+				FE9EC7B721AB00A5001BDF38 /* CodeView.swift */,
 				FE3E87D5219A0DE1007DB82A /* UserDefaults+Keys.swift */,
 				FEEEB1A7219B6DE500A1A2D8 /* UINavigationController+Color.swift */,
 				FEB16088219F6C650053CD0D /* UNKeys.swift */,
@@ -190,6 +201,7 @@
 				FEB1608F219FAD850053CD0D /* UIViewController+Extensions.swift */,
 				FEB16093219FB4E40053CD0D /* UIImage+Resized.swift */,
 				FEB16095219FD2B50053CD0D /* Date+Formatted.swift */,
+				FE9EC7B921AB013F001BDF38 /* AppStyle.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -206,7 +218,6 @@
 				FE41C322219220BF000034FC /* Frameworks */,
 				FE41C323219220BF000034FC /* Resources */,
 				AC92ED71A95989C2D56E9BB7 /* [CP] Embed Pods Frameworks */,
-				934786B7E9217D0FD6B47C85 /* [CP] Copy Pods Resources */,
 				FEB5431421A6189600AB0E0D /* ShellScript */,
 			);
 			buildRules = (
@@ -284,30 +295,18 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		934786B7E9217D0FD6B47C85 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MovieNight/Pods-MovieNight-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		AC92ED71A95989C2D56E9BB7 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MovieNight/Pods-MovieNight-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Cartography/Cartography.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cartography.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -339,14 +338,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE3E87D6219A0DE1007DB82A /* UserDefaults+Keys.swift in Sources */,
+				FE9EC7B521AB003F001BDF38 /* MovieView.swift in Sources */,
 				FEB16094219FB4E40053CD0D /* UIImage+Resized.swift in Sources */,
 				FE3E87D8219A145E007DB82A /* ColorScheme.swift in Sources */,
 				FE41C34A21922E61000034FC /* CustomError.swift in Sources */,
 				FEEEB19F219B4A5F00A1A2D8 /* AjustesViewController.swift in Sources */,
 				FE71D4B4219666C800967257 /* MovieViewController.swift in Sources */,
 				FE41C34721922B03000034FC /* JMovieService.swift in Sources */,
+				FE9EC7B321AAFD79001BDF38 /* ViewCodeMovieVC.swift in Sources */,
 				FE41C329219220BF000034FC /* AppDelegate.swift in Sources */,
 				FE71D4B6219668C100967257 /* SummaryView.swift in Sources */,
+				FE9EC7BA21AB013F001BDF38 /* AppStyle.swift in Sources */,
 				FEB16089219F6C650053CD0D /* UNKeys.swift in Sources */,
 				FE41C342219225B5000034FC /* MovieListTableViewCell.swift in Sources */,
 				FE71D4B2219666B600967257 /* EditAddMovieViewController.swift in Sources */,
@@ -361,6 +363,7 @@
 				FEB1608B219F7FDE0053CD0D /* UIImage+SetColor.swift in Sources */,
 				FEB1608E219FAAF70053CD0D /* MovieNight.xcdatamodeld in Sources */,
 				FE3E87D4219A0D46007DB82A /* ColorSchemeManager.swift in Sources */,
+				FE9EC7B821AB00A5001BDF38 /* CodeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
