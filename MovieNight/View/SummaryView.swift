@@ -15,7 +15,7 @@ final class SummaryView: UIView {
 
     let summaryTitleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Sinopse:"
+        label.text = Localization.summary
         label.font = .body
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -43,7 +43,7 @@ final class SummaryView: UIView {
 }
 
 extension SummaryView: CodeView {
-    
+
     func reloadColor() {
         summaryLabel.textColor = .white
                 summaryTitleLabel.textColor = .white
@@ -85,6 +85,6 @@ extension SummaryView: CodeView {
     }
 
     func reloadI18N() {
-        print("Summary view i18n")
+        summaryTitleLabel.text = Localization.summary
     }
 }

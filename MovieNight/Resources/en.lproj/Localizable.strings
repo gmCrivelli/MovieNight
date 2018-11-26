@@ -1,0 +1,60 @@
+// Settings screen
+"SETTINGS" = "Settings";
+"THEME" = "Theme";
+"LIGHT" = "Light";
+"DARK" = "Dark";
+"NAPOLITAN" = "Napolitan";
+"AUTOPLAY_TRAILERS" = "Autoplay Movie Trailers";
+
+// Movie List
+"MOVIES" = "Movies";
+"NEW_RELEASES" = "New Releases";
+"NO_MOVIES" = "No registered movies... yet!";
+
+// Movie View Controller
+"MOVIE" = "Movie";
+"SUMMARY" = "Summary:";
+"NO_SUMMARY" = "No summary!";
+"NO_CATEGORIES" = "No category";
+"REMINDER_BUTTON" = "Set reminder ⏰";
+
+// Movie CRUD
+"EDIT" = "Edit";
+"EDIT_MOVIE" = "Edit Movie";
+"ADD_MOVIE" = "Add Movie";
+"EDIT_POSTER" = "Edit poster";
+"MOVIE_TITLE" = "Movie Title";
+"MOVIE_TITLE_PLACEHOLDER" = "Monty Python and the Holy Grail";
+"CATEGORIES" = "Categories";
+"CATEGORIES_PLACEHOLDER" = "Adventure, Comedy, Nonsense";
+"DURATION" = "Duration";
+"RATING" = "Rating";
+"DELETE_MOVIE" = "Delete Movie";
+
+// Alert messages
+"MOVIE_POSTER" = "Movie Poster";
+"MOVIE_POSTER_MESSAGE" = "Select movie poster from:";
+"CAMERA" = "Camera";
+"ALBUM" = "Picture Library";
+"CANCEL" = "Cancel";
+"OK" = "OK";
+"ATTENTION" = "Attention!";
+"DELETE_MOVIE_CHECK" = "Are you sure you want to delete this movie? This action may not be undone.";
+"REMINDER" = "Reminder";
+"REMINDER_MESSAGE" = "Select a date and time to be reminded to watch the movie!";
+"CREATE_REMINDER" = "Create reminder";
+"PERMISSION_NEEDED" = "Permission needed";
+"PERMISSION_NEEDED_MESSAGE" = "To receive reminders, please allow the usage of notifications in your device settings.";
+"UNDERSTOOD" = "Understood!";
+
+// Notifications
+"NOTIFICATION_TITLE" = "🍿 Grab your popcorn, it's movie time!";
+"NOTIFICATION_BODY_FIRST" = "Just passing by to remind you: Go watch ";
+"NOTIFICATION_BODY_SECOND" = "! Have fun :)";
+
+// Error messages
+"ERROR" = "Error";
+"INTERNAL_ERROR" = "Whoops! Check if your internet connection is active.";
+"NOT_FOUND_ERROR" = "Whoops! Could not find the trailer for this movie.";
+"DEFAULT_ERROR" = "Whoops! Something went wrong. Please try again later.";
+

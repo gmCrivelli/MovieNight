@@ -25,6 +25,13 @@ class EditAddMovieViewController: UIViewController {
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var posterImage: UIImageView!
 
+    @IBOutlet weak var movieTitleLabel: UILabel!
+    @IBOutlet weak var categoriesLabel: UILabel!
+    @IBOutlet weak var summaryLabel: UILabel!
+    @IBOutlet weak var durationLabel: UILabel!
+    @IBOutlet weak var ratingTitleLabel: UILabel!
+    @IBOutlet weak var editPosterButton: UIButton!
+
     // MARK: - Properties
     var movie: CDMovie?
 
@@ -34,7 +41,6 @@ class EditAddMovieViewController: UIViewController {
        self.deleteButton.layer.cornerRadius = 10.0
         self.navigationController?.navigationBar.prefersLargeTitles = false
         self.scrollView.keyboardDismissMode = .onDrag
-
         self.setupView()
     }
 
@@ -42,6 +48,7 @@ class EditAddMovieViewController: UIViewController {
         super.viewWillAppear(animated)
         self.registerForNotifications()
         self.reloadColor()
+        self.reloadI18N()
     }
 
     deinit {
@@ -73,9 +80,9 @@ class EditAddMovieViewController: UIViewController {
             if let summary = movie.summary, summary != "" {
                 movieSummaryTv.text = movie.summary
             } else {
-                movieSummaryTv.text = "Sem sinopse!"
+                movieSummaryTv.text = Localization.noSummary
             }
-            categoriesTf.text = movie.categories ?? "Sem categoria"
+            categoriesTf.text = movie.categories ?? Localization.noCategories
 
             if movie.rating >= 0.0 {
                 ratingLbl.text = "⭐️ \(movie.rating)"
@@ -91,7 +98,8 @@ class EditAddMovieViewController: UIViewController {
             }
 
             deleteButton.isHidden = false
-            self.title = "Editar Filme"
+            self.title = Localization.editMovie
+
         } else {
             movieTitleTf.text = ""
             durationMinutesTf.text = ""
@@ -102,7 +110,7 @@ class EditAddMovieViewController: UIViewController {
             ratingSlider.value = 60.0
             posterImage.image = UIImage(named: "cinema")
             deleteButton.isHidden = true
-            self.title = "Cadastrar Filme"
+            self.title = Localization.addMovie
         }
 
         self.movieSummaryTv.layer.borderWidth = 1.0
@@ -139,6 +147,18 @@ class EditAddMovieViewController: UIViewController {
         setNeedsStatusBarAppearanceUpdate()
     }
 
+    func reloadI18N() {
+        editPosterButton.setTitle(Localization.editPoster, for: .normal)
+        deleteButton.setTitle(Localization.deleteMovie, for: .normal)
+        movieTitleLabel.text = Localization.movieTitle
+        movieTitleTf.placeholder = Localization.movieTitlePlaceholder
+        categoriesLabel.text = Localization.categories
+        categoriesTf.placeholder = Localization.categoriesPlaceholder
+        durationLabel.text = Localization.duration
+        summaryLabel.text = Localization.summary
+        ratingTitleLabel.text = Localization.rating
+    }
+
     /// Update scroll view constraints to fit keyboard when it will show.
     @objc func keyboardWillShow(notification: NSNotification) {
         guard let userInfo = notification.userInfo else { return }
@@ -169,23 +189,23 @@ class EditAddMovieViewController: UIViewController {
     // MARK: - Action Outlets
 
     @IBAction func addPosterImage(_ sender: Any) {
-        let alert = UIAlertController(title: "Pôster do Filme",
-                                      message: "Escolha de onde recuperar o pôster",
+        let alert = UIAlertController(title: Localization.moviePoster,
+                                      message: Localization.moviePosterMessage,
                                       preferredStyle: .actionSheet)
 
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            let cameraAction = UIAlertAction(title: "Camera", style: .default) { [weak self] (_) in
+            let cameraAction = UIAlertAction(title: Localization.camera, style: .default) { [weak self] (_) in
                 self?.selectPicture(from: .camera)
             }
             alert.addAction(cameraAction)
         }
 
-        let albumAction = UIAlertAction(title: "Album de Fotos", style: .default) { [weak self] (_) in
+        let albumAction = UIAlertAction(title: Localization.album, style: .default) { [weak self] (_) in
             self?.selectPicture(from: .savedPhotosAlbum)
         }
         alert.addAction(albumAction)
 
-        let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: Localization.cancel, style: .cancel, handler: nil)
         alert.addAction(cancelAction)
 
         present(alert, animated: true, completion: nil)
@@ -200,11 +220,11 @@ class EditAddMovieViewController: UIViewController {
     /// User pressed the "Delete" button. Confirm destructive action, and delete movie from database if necessary.
     @IBAction func deleteMovie(_ sender: Any) {
 
-        let alert = UIAlertController(title: "Atenção!",
-                                      message: "Tem certeza de que deseja deletar este filme? Esta ação não pode ser desfeita.",
+        let alert = UIAlertController(title: Localization.attention,
+                                      message: Localization.deleteMovieCheck,
                                       preferredStyle: UIAlertController.Style.alert)
 
-        alert.addAction(UIAlertAction(title: "Deletar Filme",
+        alert.addAction(UIAlertAction(title: Localization.deleteMovie,
                                       style: .destructive,
                                       handler: { [weak self] action in
                                                     if let movie = self?.movie {
@@ -212,7 +232,7 @@ class EditAddMovieViewController: UIViewController {
                                                     }
                                                     self?.unwindToMovieList()
         }))
-        alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: Localization.cancel, style: .cancel, handler: nil))
 
         self.present(alert, animated: true, completion: nil)
         alert.view.tintColor = #colorLiteral(red: 0.01066807099, green: 0.3691979647, blue: 0.7817171216, alpha: 1)
@@ -234,7 +254,7 @@ class EditAddMovieViewController: UIViewController {
             if let summary = movieSummaryTv.text, summary.trimmingCharacters(in: .whitespacesAndNewlines) != "" {
                 cdMovie.summary = summary
             } else {
-                cdMovie.summary = "Sem sinopse!"
+                cdMovie.summary = Localization.noSummary
             }
 
             if let imageData = posterImage.image?.jpegData(compressionQuality: 75) {
@@ -260,7 +280,7 @@ class EditAddMovieViewController: UIViewController {
             if let summary = movieSummaryTv.text, summary.trimmingCharacters(in: .whitespacesAndNewlines) != "" {
                 movie.summary = summary
             } else {
-                movie.summary = "Sem sinopse!"
+                movie.summary = Localization.noSummary
             }
 
             if let imageData = posterImage.image?.jpegData(compressionQuality: 75) {

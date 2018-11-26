@@ -1,0 +1,59 @@
+// Settings screen
+"SETTINGS" = "Ajustes";
+"THEME" = "Tema";
+"LIGHT" = "Claro";
+"DARK" = "Escuro";
+"NAPOLITAN" = "Napolitano";
+"AUTOPLAY_TRAILERS" = "Iniciar trailers automaticamente";
+
+// Movie List
+"MOVIES" = "Filmes";
+"NEW_RELEASES" = "Novidades e Lançamentos";
+"NO_MOVIES" = "Nenhum filme cadastrado... ainda!";
+
+// Movie View Controller
+"MOVIE" = "Filme";
+"SUMMARY" = "Sinopse:";
+"NO_SUMMARY" = "Sem sinopse!";
+"NO_CATEGORIES" = "Sem categoria";
+"REMINDER_BUTTON" = "Adicionar lembrete ⏰";
+
+// Movie CRUD
+"EDIT" = "Editar";
+"EDIT_MOVIE" = "Editar Filme";
+"ADD_MOVIE" = "Cadastrar Filme";
+"EDIT_POSTER" = "Editar poster";
+"MOVIE_TITLE" = "Título do Filme";
+"MOVIE_TITLE_PLACEHOLDER" = "Monty Python e o Cálice Sagrado";
+"CATEGORIES" = "Categorias";
+"CATEGORIES_PLACEHOLDER" = "Aventura, Comédia, Nonsense";
+"DURATION" = "Duração";
+"RATING" = "Nota";
+"DELETE_MOVIE" = "Deletar Filme";
+
+// Alert messages
+"MOVIE_POSTER" = "Pôster do Filme";
+"MOVIE_POSTER_MESSAGE" = "Escolher uma pôster do filme usando:";
+"CAMERA" = "Camera";
+"ALBUM" = "Album de Fotos";
+"CANCEL" = "Cancelar";
+"OK" = "OK";
+"ATTENTION" = "Atenção!";
+"DELETE_MOVIE_CHECK" = "Tem certeza de que deseja deletar este filme? Esta ação não pode ser desfeita.";
+"REMINDER" = "Lembrete";
+"REMINDER_MESSAGE" = "Selecione uma data e hora para ser lembrado de assistir ao filme!";
+"CREATE_REMINDER" = "Criar Lembrete";
+"PERMISSION_NEEDED" = "Permissão necessária";
+"PERMISSION_NEEDED_MESSAGE" = "Para receber lembretes, por favor autorize o uso de notificações nas configurações do seu aparelho.";
+"UNDERSTOOD" = "Entendido!";
+
+// Notifications
+"NOTIFICATION_TITLE" = "🍿 Pegue sua pipoca, é hora do filme!";
+"NOTIFICATION_BODY_FIRST" = "Só passando para te lembrar: Vá assistir ";
+"NOTIFICATION_BODY_SECOND" = "! Boa diversão :)";
+
+// Error messages
+"ERROR" = "Erro";
+"INTERNAL_ERROR" = "Ops! Confira se você tem uma conexão de internet ativa.";
+"NOT_FOUND_ERROR" = "Ops! Não foi possível localizar o trailer deste filme.";
+"DEFAULT_ERROR" = "Ops! Algo deu errado. Por favor tente novamente mais tarde.";

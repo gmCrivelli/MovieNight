@@ -42,7 +42,7 @@ class MovieListTableViewController: UITableViewController {
                                                width: self.tableView.bounds.size.width,
                                                height: self.tableView.bounds.size.height
         ))
-        noDataLbl.text = "Nenhum filme cadastrado... Ainda!"
+        noDataLbl.text = Localization.noMovies
         noDataLbl.textColor = UIColor.white
         noDataLbl.textAlignment = .center
 
@@ -53,6 +53,7 @@ class MovieListTableViewController: UITableViewController {
         super.viewWillAppear(animated)
         self.registerForNotifications()
         self.reloadColor()
+        self.reloadI18N()
         self.updateTableView()
     }
 
@@ -91,6 +92,13 @@ class MovieListTableViewController: UITableViewController {
         setNeedsStatusBarAppearanceUpdate()
 
         self.tableView.reloadData()
+    }
+
+    func reloadI18N() {
+        self.title = Localization.movies
+
+        self.tabBarController?.toolbarItems?.first?.title = Localization.movies
+        self.tabBarController?.toolbarItems?.last?.title = Localization.settings
     }
 
     /// Fetch the movie list from the movie service
@@ -191,7 +199,7 @@ class MovieListTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        if segue.identifier == "showMovie", let destination = segue.destination as? MovieViewController {
 //            destination.movie = self.selectedMovie
-//        }        
+//        }
         if segue.identifier == "showViewCodeMovie", let destination = segue.destination as? ViewCodeMovieVC {
             destination.movie = self.selectedMovie
         }

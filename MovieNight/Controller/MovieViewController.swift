@@ -23,6 +23,7 @@ class MovieViewController: UIViewController {
     @IBOutlet weak var gradientImg: UIImageView!
     @IBOutlet weak var btnReminder: UIButton!
     @IBOutlet weak var btnPlay: UIButton!
+    @IBOutlet weak var summaryTitleLabel: UILabel!
 
     // MARK: - Properties
     var movie: CDMovie?
@@ -48,9 +49,10 @@ class MovieViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.registerForNotifications()
-        self.reloadColor()
         self.setupView()
+        self.reloadColor()
         self.reloadAutoplay()
+        self.reloadI18N()
     }
 
     override func viewDidDisappear(_ animated: Bool) {
@@ -80,9 +82,11 @@ class MovieViewController: UIViewController {
             if let summary = movie.summary, summary != "" {
                 summaryLbl.text = movie.summary
             } else {
-                summaryLbl.text = "Sem sinopse!"
+                summaryLbl.text = Localization.noSummary
             }
-            categoriesLbl.text = movie.categories?.split(separator: ",").joined(separator: " | ") ?? "Sem categoria"
+            categoriesLbl.text = movie.categories?
+                .split(separator: ",")
+                .joined(separator: " | ") ?? Localization.noCategories
 
             if movie.rating >= 0.0 {
                ratingLbl.text = "⭐️ \(movie.rating) / 10.0"
@@ -136,6 +140,12 @@ class MovieViewController: UIViewController {
         }
     }
 
+    func reloadI18N() {
+        self.title = Localization.movie
+        self.summaryTitleLabel.text = Localization.summary
+        self.btnReminder.setTitle(Localization.reminderButton, for: .normal)
+    }
+
     func loadMovieTrailer(_ url: URL) {
 
         let player = AVPlayer(playerItem: AVPlayerItem(asset: AVAsset(url: url),
@@ -158,18 +168,18 @@ class MovieViewController: UIViewController {
         var message = ""
         switch error {
         case .internalError:
-            message = "Erro interno, entre em contato com os administradores."
+            message = Localization.internalError
         case .notFound:
-            message = "Trailer não encontrado!"
+            message = Localization.notFoundError
         default:
-            message = "Falha ao buscar dados no servidor."
+            message = Localization.defaultError
         }
 
         // Create the alert controller.
-        let alert = UIAlertController(title: "Erro",
+        let alert = UIAlertController(title: Localization.error,
                                       message: message,
                                       preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: Localization.ok, style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
 
@@ -187,8 +197,8 @@ class MovieViewController: UIViewController {
 
     @IBAction func reminderBtnPressed(_ sender: Any) {
         // Create the alert controller.
-        let alert = UIAlertController(title: "Lembrete",
-                                      message: "Selecione uma data e hora para ser lembrado de assistir o filme!",
+        let alert = UIAlertController(title: Localization.reminder,
+                                      message: Localization.reminderMessage,
                                       preferredStyle: .alert)
 
         // Add the text field
@@ -197,12 +207,12 @@ class MovieViewController: UIViewController {
             textField.text = self.datePicker.date.formatted
         }
 
-        alert.addAction(UIAlertAction(title: "Criar lembrete", style: .default) { [weak self] (_) in
+        alert.addAction(UIAlertAction(title: Localization.createReminder, style: .default) { [weak self] (_) in
             if let movie = self?.movie, let date = self?.datePicker.date {
                 self?.scheduleNotification(for: movie, on: date)
             }
         })
-        alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: Localization.cancel, style: .cancel, handler: nil))
 
         // Present the alert.
         self.alert = alert
@@ -215,10 +225,10 @@ class MovieViewController: UIViewController {
     }
 
     func displayNotificationDeniedMessage() {
-        let alertMessage = UIAlertController(title: "Permissão necessária",
-                                             message: "Para receber lembretes de filmes, autorize o envio de notificações nas configurações do seu aparelho.",
+        let alertMessage = UIAlertController(title: Localization.permissionNeeded,
+                                             message: Localization.permissionNeededMessage,
                                              preferredStyle: .alert)
-        alertMessage.addAction(UIAlertAction(title: "Entendido!", style: .default, handler: nil))
+        alertMessage.addAction(UIAlertAction(title: Localization.understood, style: .default, handler: nil))
         self.present(alertMessage, animated: true, completion: nil)
     }
 
@@ -237,8 +247,8 @@ class MovieViewController: UIViewController {
 
         let notificationID = String(Date().timeIntervalSince1970)
         let content = UNMutableNotificationContent()
-        content.title = "🍿 Pegue sua pipoca, é hora do filme!"
-        content.body = "Só passei aqui para te lembrar de ver o filme \"\(movie.title ?? "")\". Boa diversão!"
+        content.title = Localization.notificationTitle
+        content.body = Localization.notificationBodyFirst + (movie.title ?? "") + Localization.notificationBodySecond
         content.categoryIdentifier = "Lembrete"
 
         let dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute],

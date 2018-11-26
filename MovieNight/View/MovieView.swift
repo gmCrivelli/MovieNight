@@ -76,12 +76,12 @@ final class MovieView: UIView {
     }()
 
     let summaryView: SummaryView = {
-       return SummaryView(summary: "Sem sinopse!")
+       return SummaryView(summary: Localization.noSummary)
     }()
 
     let buttonReminder: UIButton = {
         let button = UIButton()
-        button.setTitle("Adicionar lembrete ⏰", for: .normal)
+        button.setTitle(Localization.reminderButton, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -113,9 +113,11 @@ final class MovieView: UIView {
             if let summary = movie.summary, summary != "" {
                 summaryView.summaryLabel.text = movie.summary
             } else {
-                summaryView.summaryLabel.text = "Sem sinopse!"
+                summaryView.summaryLabel.text = Localization.noSummary
             }
-            categoryLabel.text = movie.categories?.split(separator: ",").joined(separator: " | ") ?? "Sem categoria"
+            categoryLabel.text = movie.categories?
+                .split(separator: ",")
+                .joined(separator: " | ") ?? Localization.noCategories
 
             if movie.rating >= 0.0 {
                 ratingLabel.text = "⭐️ \(movie.rating) / 10.0"
@@ -135,11 +137,13 @@ final class MovieView: UIView {
     }
 
     func playTrailer(player: AVPlayer) {
-        let playerLayer = AVPlayerLayer(player: player)
-        playerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
-        playerLayer.frame = posterImageView.bounds
-        posterImageView.layer.addSublayer(playerLayer)
-        playerLayer.player?.play()
+        playerLayer = AVPlayerLayer(player: player)
+        if let playerLayer = playerLayer {
+            playerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+            playerLayer.frame = posterImageView.bounds
+            posterImageView.layer.addSublayer(playerLayer)
+            playerLayer.player?.play()
+        }
 
         self.gradientImageView.isHidden = true
         self.buttonPlay.isHidden = true

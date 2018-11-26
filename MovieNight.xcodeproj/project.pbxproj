@@ -29,6 +29,8 @@
 		FE9EC7B521AB003F001BDF38 /* MovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9EC7B421AB003F001BDF38 /* MovieView.swift */; };
 		FE9EC7B821AB00A5001BDF38 /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9EC7B721AB00A5001BDF38 /* CodeView.swift */; };
 		FE9EC7BA21AB013F001BDF38 /* AppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9EC7B921AB013F001BDF38 /* AppStyle.swift */; };
+		FE9EC7BF21AB5BAD001BDF38 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FE9EC7C121AB5BAD001BDF38 /* Localizable.strings */; };
+		FE9EC7C621AB64A5001BDF38 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9EC7C521AB64A5001BDF38 /* Strings.swift */; };
 		FEA395E921A6292C0028D6B8 /* REST.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA395E821A6292C0028D6B8 /* REST.swift */; };
 		FEB16089219F6C650053CD0D /* UNKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB16088219F6C650053CD0D /* UNKeys.swift */; };
 		FEB1608B219F7FDE0053CD0D /* UIImage+SetColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB1608A219F7FDE0053CD0D /* UIImage+SetColor.swift */; };
@@ -68,6 +70,10 @@
 		FE9EC7B421AB003F001BDF38 /* MovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieView.swift; sourceTree = "<group>"; };
 		FE9EC7B721AB00A5001BDF38 /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
 		FE9EC7B921AB013F001BDF38 /* AppStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStyle.swift; sourceTree = "<group>"; };
+		FE9EC7BB21AB5B67001BDF38 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
+		FE9EC7C021AB5BAD001BDF38 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FE9EC7C221AB5BB1001BDF38 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		FE9EC7C521AB64A5001BDF38 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		FEA395E821A6292C0028D6B8 /* REST.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = REST.swift; sourceTree = "<group>"; };
 		FEB16088219F6C650053CD0D /* UNKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UNKeys.swift; sourceTree = "<group>"; };
 		FEB1608A219F7FDE0053CD0D /* UIImage+SetColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+SetColor.swift"; sourceTree = "<group>"; };
@@ -130,6 +136,8 @@
 		FE41C327219220BF000034FC /* MovieNight */ = {
 			isa = PBXGroup;
 			children = (
+				FE9EC7C321AB6473001BDF38 /* Common */,
+				FE9EC7BC21AB5B8F001BDF38 /* Resources */,
 				FE41C34521922ADC000034FC /* Services */,
 				FE41C34821922E50000034FC /* Util */,
 				FE41C33A219224C3000034FC /* Model */,
@@ -193,7 +201,6 @@
 			isa = PBXGroup;
 			children = (
 				FE41C34921922E61000034FC /* CustomError.swift */,
-				FE9EC7B721AB00A5001BDF38 /* CodeView.swift */,
 				FE3E87D5219A0DE1007DB82A /* UserDefaults+Keys.swift */,
 				FEEEB1A7219B6DE500A1A2D8 /* UINavigationController+Color.swift */,
 				FEB16088219F6C650053CD0D /* UNKeys.swift */,
@@ -201,9 +208,34 @@
 				FEB1608F219FAD850053CD0D /* UIViewController+Extensions.swift */,
 				FEB16093219FB4E40053CD0D /* UIImage+Resized.swift */,
 				FEB16095219FD2B50053CD0D /* Date+Formatted.swift */,
-				FE9EC7B921AB013F001BDF38 /* AppStyle.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		FE9EC7BC21AB5B8F001BDF38 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FE9EC7C121AB5BAD001BDF38 /* Localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FE9EC7C321AB6473001BDF38 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				FE9EC7C421AB6485001BDF38 /* Generated */,
+				FE9EC7B921AB013F001BDF38 /* AppStyle.swift */,
+				FE9EC7B721AB00A5001BDF38 /* CodeView.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		FE9EC7C421AB6485001BDF38 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				FE9EC7C521AB64A5001BDF38 /* Strings.swift */,
+			);
+			path = Generated;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,6 +283,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"pt-BR",
 			);
 			mainGroup = FE41C31C219220BF000034FC;
 			productRefGroup = FE41C326219220BF000034FC /* Products */;
@@ -267,6 +300,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE9EC7BF21AB5BAD001BDF38 /* Localizable.strings in Resources */,
 				FEEEB19B219B47F100A1A2D8 /* Settings.bundle in Resources */,
 				FE41C333219220C1000034FC /* LaunchScreen.storyboard in Resources */,
 				FE41C330219220C1000034FC /* Assets.xcassets in Resources */,
@@ -328,7 +362,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\n$PODS_ROOT/SwiftGen/bin/swiftgen strings --output $SRCROOT/MovieNight/Common/Generated/Strings.swift $SRCROOT/MovieNight/Resources/en.lproj/Localizable.strings --param enumName=Localization -t flat-swift4\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -343,6 +377,7 @@
 				FE3E87D8219A145E007DB82A /* ColorScheme.swift in Sources */,
 				FE41C34A21922E61000034FC /* CustomError.swift in Sources */,
 				FEEEB19F219B4A5F00A1A2D8 /* AjustesViewController.swift in Sources */,
+				FE9EC7C621AB64A5001BDF38 /* Strings.swift in Sources */,
 				FE71D4B4219666C800967257 /* MovieViewController.swift in Sources */,
 				FE41C34721922B03000034FC /* JMovieService.swift in Sources */,
 				FE9EC7B321AAFD79001BDF38 /* ViewCodeMovieVC.swift in Sources */,
@@ -374,6 +409,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				FE41C32D219220BF000034FC /* Base */,
+				FE9EC7BB21AB5B67001BDF38 /* pt-BR */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -386,6 +422,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		FE9EC7C121AB5BAD001BDF38 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE9EC7C021AB5BAD001BDF38 /* en */,
+				FE9EC7C221AB5BB1001BDF38 /* pt-BR */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -393,6 +438,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -454,6 +500,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

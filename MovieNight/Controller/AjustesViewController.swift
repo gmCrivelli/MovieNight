@@ -29,6 +29,7 @@ class AjustesViewController: UIViewController {
         self.setupFromBundle()
         self.registerForNotifications()
         self.reloadColor()
+        self.reloadI18N()
     }
 
     deinit {
@@ -65,6 +66,19 @@ class AjustesViewController: UIViewController {
         self.tabBarController?.tabBar.unselectedItemTintColor = csManager.currentColorScheme.unselectedColor
 
         setNeedsStatusBarAppearanceUpdate()
+    }
+
+    func reloadI18N() {
+        self.title = Localization.settings
+
+        self.tabBarController?.toolbarItems?.first?.title = Localization.movies
+        self.tabBarController?.toolbarItems?.last?.title = Localization.settings
+
+        lblAjustes.text = Localization.settings
+        lblAutoplay.text = Localization.autoplayTrailers
+        segColor.setTitle(Localization.light, forSegmentAt: 0)
+        segColor.setTitle(Localization.dark, forSegmentAt: 1)
+        segColor.setTitle(Localization.napolitan, forSegmentAt: 2)
     }
 
     // MARK: - IBActions

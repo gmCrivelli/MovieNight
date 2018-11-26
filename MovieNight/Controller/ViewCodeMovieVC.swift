@@ -46,7 +46,10 @@ class ViewCodeMovieVC: UIViewController {
 
         // Do any additional setup after loading the view.
         self.navigationController?.navigationBar.prefersLargeTitles = false
-        let editButton = UIBarButtonItem(title: "Editar", style: .plain, target: self, action: #selector(editMovie))
+        let editButton = UIBarButtonItem(title: Localization.edit,
+                                         style: .plain,
+                                         target: self,
+                                         action: #selector(editMovie))
         self.navigationItem.rightBarButtonItem = editButton
     }
 
@@ -60,8 +63,9 @@ class ViewCodeMovieVC: UIViewController {
     }
 
     override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
         self.customView.stopTrailer()
+        self.isPlaying = false
+        super.viewDidDisappear(animated)
     }
 
     deinit {
@@ -118,18 +122,18 @@ class ViewCodeMovieVC: UIViewController {
         var message = ""
         switch error {
         case .internalError:
-            message = "Erro interno, entre em contato com os administradores."
+            message = Localization.internalError
         case .notFound:
-            message = "Trailer não encontrado!"
+            message = Localization.notFoundError
         default:
-            message = "Falha ao buscar dados no servidor."
+            message = Localization.defaultError
         }
 
         // Create the alert controller.
-        let alert = UIAlertController(title: "Erro",
+        let alert = UIAlertController(title: Localization.error,
                                       message: message,
                                       preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: Localization.ok, style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
 
@@ -138,10 +142,10 @@ class ViewCodeMovieVC: UIViewController {
     }
 
     func displayNotificationDeniedMessage() {
-        let alertMessage = UIAlertController(title: "Permissão necessária",
-                                             message: "Para receber lembretes de filmes, autorize o envio de notificações nas configurações do seu aparelho.",
+        let alertMessage = UIAlertController(title: Localization.permissionNeeded,
+                                             message: Localization.permissionNeededMessage,
                                              preferredStyle: .alert)
-        alertMessage.addAction(UIAlertAction(title: "Entendido!", style: .default, handler: nil))
+        alertMessage.addAction(UIAlertAction(title: Localization.understood, style: .default, handler: nil))
         self.present(alertMessage, animated: true, completion: nil)
     }
 
@@ -160,8 +164,8 @@ class ViewCodeMovieVC: UIViewController {
 
         let notificationID = String(Date().timeIntervalSince1970)
         let content = UNMutableNotificationContent()
-        content.title = "🍿 Pegue sua pipoca, é hora do filme!"
-        content.body = "Só passei aqui para te lembrar de ver o filme \"\(movie.title ?? "")\". Boa diversão!"
+        content.title = Localization.notificationTitle
+        content.body = Localization.notificationBodyFirst + (movie.title ?? "") + Localization.notificationBodySecond
         content.categoryIdentifier = "Lembrete"
 
         let dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute],
@@ -190,8 +194,8 @@ class ViewCodeMovieVC: UIViewController {
 extension ViewCodeMovieVC: MovieViewDelegate {
     func reminderButtonPressed() {
         // Create the alert controller.
-        let alert = UIAlertController(title: "Lembrete",
-                                      message: "Selecione uma data e hora para ser lembrado de assistir o filme!",
+        let alert = UIAlertController(title: Localization.reminder,
+                                      message: Localization.reminderMessage,
                                       preferredStyle: .alert)
 
         // Add the text field
@@ -200,12 +204,12 @@ extension ViewCodeMovieVC: MovieViewDelegate {
             textField.text = self.datePicker.date.formatted
         }
 
-        alert.addAction(UIAlertAction(title: "Criar lembrete", style: .default) { [weak self] (_) in
+        alert.addAction(UIAlertAction(title: Localization.createReminder, style: .default) { [weak self] (_) in
             if let movie = self?.movie, let date = self?.datePicker.date {
                 self?.scheduleNotification(for: movie, on: date)
             }
         })
-        alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: Localization.cancel, style: .cancel, handler: nil))
 
         // Present the alert.
         self.alert = alert

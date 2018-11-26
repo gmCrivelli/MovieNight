@@ -1,0 +1,6 @@
+# MovieNight
+strings:
+  inputs: MovieNight/Resources/Base.lproj/Localizable.strings
+  outputs:
+    - templateName: structured-swift4
+      output: Generated/strings.swift

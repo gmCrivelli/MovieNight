@@ -494,6 +494,7 @@
                         <outlet property="posterImg" destination="iUg-ex-oG7" id="wIx-LW-RDJ"/>
                         <outlet property="ratingLbl" destination="xln-Nr-S3h" id="OoR-RN-PEA"/>
                         <outlet property="summaryLbl" destination="ifG-MN-qVF" id="PZf-yi-DVJ"/>
+                        <outlet property="summaryTitleLabel" destination="gkv-7M-sLE" id="4cu-Z4-HWV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ElM-dJ-EaP" sceneMemberID="firstResponder"/>
@@ -722,18 +723,24 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="categoriesLabel" destination="Qh0-4j-9qi" id="3MG-kV-ux0"/>
                         <outlet property="categoriesTf" destination="5Up-Lw-zsv" id="MjD-l1-g8K"/>
                         <outlet property="contentView" destination="TZN-Rb-SMa" id="Pm6-sH-rCk"/>
-                        <outlet property="deleteButton" destination="x9d-My-o7v" id="1QP-1c-n0Y"/>
+                        <outlet property="deleteButton" destination="x9d-My-o7v" id="EiS-ku-VKy"/>
                         <outlet property="durationHoursTf" destination="pjH-DH-Qna" id="hUZ-fL-OFl"/>
+                        <outlet property="durationLabel" destination="TtA-rH-j1t" id="qwm-Rf-MO1"/>
                         <outlet property="durationMinutesTf" destination="KIi-fe-eE6" id="7tP-oC-sPP"/>
+                        <outlet property="editPosterButton" destination="P3K-Ft-YKD" id="Axb-ca-QhW"/>
                         <outlet property="movieSummaryTv" destination="ylC-fg-V2Y" id="6Sd-a8-Yhx"/>
+                        <outlet property="movieTitleLabel" destination="aYm-Lh-uMw" id="ESh-fw-QcF"/>
                         <outlet property="movieTitleTf" destination="wqV-Zx-fMf" id="u9f-Tv-Muo"/>
                         <outlet property="posterImage" destination="woM-nv-5Ha" id="Bha-eg-jIV"/>
                         <outlet property="ratingLbl" destination="rkw-fh-6hd" id="Iw2-Ug-HhQ"/>
                         <outlet property="ratingSlider" destination="HeA-Nj-3mr" id="Z9p-qt-L6L"/>
+                        <outlet property="ratingTitleLabel" destination="bf6-Ix-dQd" id="xvU-gn-IfS"/>
                         <outlet property="scrollView" destination="3rn-fL-6ca" id="NuN-2g-zef"/>
                         <outlet property="secondaryRatingLbl" destination="ufI-9d-kSa" id="O7R-id-tWp"/>
+                        <outlet property="summaryLabel" destination="2UV-KF-slQ" id="hYJ-EW-BDy"/>
                         <segue destination="4kr-4c-djR" kind="unwind" identifier="unwindSegueToMovieVC" unwindAction="unwindToMovieVCWithSegue:" id="qEh-y2-bLg"/>
                         <segue destination="4kr-4c-djR" kind="unwind" identifier="unwindSegueToMovieListVC" unwindAction="unwindToMovieListVCWithSegue:" id="7JM-jq-ti9"/>
                     </connections>
@@ -741,7 +748,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oC9-5g-qph" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="4kr-4c-djR" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1434" y="207"/>
+            <point key="canvasLocation" x="1473" y="464"/>
         </scene>
     </scenes>
     <resources>
@@ -757,6 +764,6 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hdG-ah-WLE"/>
+        <segue reference="vJE-sj-NHC"/>
     </inferredMetricsTieBreakers>
 </document>

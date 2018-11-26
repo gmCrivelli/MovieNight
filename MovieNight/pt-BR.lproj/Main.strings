@@ -1,0 +1,114 @@
+
+/* Class = "UILabel"; text = "h"; ObjectID = "0VR-gG-ytq"; */
+"0VR-gG-ytq.text" = "h";
+
+/* Class = "UILabel"; text = "Sinopse"; ObjectID = "2UV-KF-slQ"; */
+"2UV-KF-slQ.text" = "Sinopse";
+
+/* Class = "UILabel"; text = "m"; ObjectID = "5T5-c2-1dH"; */
+"5T5-c2-1dH.text" = "m";
+
+/* Class = "UITextField"; placeholder = "Aventura, Comédia, Nonsense"; ObjectID = "5Up-Lw-zsv"; */
+"5Up-Lw-zsv.placeholder" = "Aventura, Comédia, Nonsense";
+
+/* Class = "UITabBarItem"; title = "Filmes"; ObjectID = "83o-cs-MMV"; */
+"83o-cs-MMV.title" = "Filmes";
+
+/* Class = "UILabel"; text = "⭐️ 10/10"; ObjectID = "AE7-Jn-XWm"; */
+"AE7-Jn-XWm.text" = "⭐️ 10/10";
+
+/* Class = "UIBarButtonItem"; title = "Editar"; ObjectID = "B1y-2P-eo5"; */
+"B1y-2P-eo5.title" = "Editar";
+
+/* Class = "UILabel"; text = "Monty Python and the Holy Grail"; ObjectID = "ELj-j9-ayt"; */
+"ELj-j9-ayt.text" = "Monty Python and the Holy Grail";
+
+/* Class = "UILabel"; text = "Sinopse"; ObjectID = "IaP-Am-b2V"; */
+"IaP-Am-b2V.text" = "Sinopse";
+
+/* Class = "UITextField"; placeholder = "32"; ObjectID = "KIi-fe-eE6"; */
+"KIi-fe-eE6.placeholder" = "32";
+
+/* Class = "UIButton"; normalTitle = "Editar Poster"; ObjectID = "P3K-Ft-YKD"; */
+"P3K-Ft-YKD.normalTitle" = "Editar Poster";
+
+/* Class = "UILabel"; text = "Categorias"; ObjectID = "Qh0-4j-9qi"; */
+"Qh0-4j-9qi.text" = "Categorias";
+
+/* Class = "UILabel"; text = "Ação | Suspense | Romance | Drama | Rock | Etc"; ObjectID = "Rgj-P2-GMZ"; */
+"Rgj-P2-GMZ.text" = "Ação | Suspense | Romance | Drama | Rock | Etc";
+
+/* Class = "UISegmentedControl"; SJK-Eo-CLQ.segmentTitles[0] = "Light"; ObjectID = "SJK-Eo-CLQ"; */
+"SJK-Eo-CLQ.segmentTitles[0]" = "Light";
+
+/* Class = "UISegmentedControl"; SJK-Eo-CLQ.segmentTitles[1] = "Dark"; ObjectID = "SJK-Eo-CLQ"; */
+"SJK-Eo-CLQ.segmentTitles[1]" = "Dark";
+
+/* Class = "UISegmentedControl"; SJK-Eo-CLQ.segmentTitles[2] = "Napolitano"; ObjectID = "SJK-Eo-CLQ"; */
+"SJK-Eo-CLQ.segmentTitles[2]" = "Napolitano";
+
+/* Class = "UINavigationItem"; title = "Filmes"; ObjectID = "TGK-uD-1MO"; */
+"TGK-uD-1MO.title" = "Filmes";
+
+/* Class = "UILabel"; text = "Duração"; ObjectID = "TtA-rH-j1t"; */
+"TtA-rH-j1t.text" = "Duração";
+
+/* Class = "UILabel"; text = "Titulo do filme"; ObjectID = "Y4g-Ym-qaH"; */
+"Y4g-Ym-qaH.text" = "Titulo do filme";
+
+/* Class = "UILabel"; text = "Iniciar trailers automaticamente"; ObjectID = "Z23-VV-gHw"; */
+"Z23-VV-gHw.text" = "Iniciar trailers automaticamente";
+
+/* Class = "UILabel"; text = "Lançamentos e Novidades"; ObjectID = "ZtA-Ca-FBf"; */
+"ZtA-Ca-FBf.text" = "Lançamentos e Novidades";
+
+/* Class = "UILabel"; text = "Título do Filme"; ObjectID = "aYm-Lh-uMw"; */
+"aYm-Lh-uMw.text" = "Título do Filme";
+
+/* Class = "UILabel"; text = "Ajustes"; ObjectID = "bWj-zB-d7w"; */
+"bWj-zB-d7w.text" = "Ajustes";
+
+/* Class = "UILabel"; text = "Nota"; ObjectID = "bf6-Ix-dQd"; */
+"bf6-Ix-dQd.text" = "Nota";
+
+/* Class = "UIButton"; normalTitle = "Adicionar lembrete ⏰"; ObjectID = "cLn-EI-aPL"; */
+"cLn-EI-aPL.normalTitle" = "Adicionar lembrete ⏰";
+
+/* Class = "UILabel"; text = "Sinopse:"; ObjectID = "gkv-7M-sLE"; */
+"gkv-7M-sLE.text" = "Sinopse:";
+
+/* Class = "UITabBarItem"; title = "Ajustes"; ObjectID = "hd4-Yw-uYp"; */
+"hd4-Yw-uYp.title" = "Ajustes";
+
+/* Class = "UILabel"; text = "Mussum Ipsum, cacilds vidis litro abertis. "; ObjectID = "ifG-MN-qVF"; */
+"ifG-MN-qVF.text" = "Mussum Ipsum, cacilds vidis litro abertis. ";
+
+/* Class = "UILabel"; text = "153 min"; ObjectID = "mo5-6r-sde"; */
+"mo5-6r-sde.text" = "153 min";
+
+/* Class = "UITextField"; placeholder = "1"; ObjectID = "pjH-DH-Qna"; */
+"pjH-DH-Qna.placeholder" = "1";
+
+/* Class = "UINavigationItem"; title = "Title"; ObjectID = "qUo-R8-owW"; */
+"qUo-R8-owW.title" = "Title";
+
+/* Class = "UILabel"; text = "⭐️ 6.0"; ObjectID = "rkw-fh-6hd"; */
+"rkw-fh-6hd.text" = "⭐️ 6.0";
+
+/* Class = "UILabel"; text = "/ 10.0"; ObjectID = "ufI-9d-kSa"; */
+"ufI-9d-kSa.text" = "/ 10.0";
+
+/* Class = "UITextField"; placeholder = "Monty Python e o Cálice Sagrado"; ObjectID = "wqV-Zx-fMf"; */
+"wqV-Zx-fMf.placeholder" = "Monty Python e o Cálice Sagrado";
+
+/* Class = "UITabBarItem"; title = "Filmes"; ObjectID = "wra-Ed-VhU"; */
+"wra-Ed-VhU.title" = "Filmes";
+
+/* Class = "UIButton"; normalTitle = "Deletar Filme"; ObjectID = "x9d-My-o7v"; */
+"x9d-My-o7v.normalTitle" = "Deletar Filme";
+
+/* Class = "UILabel"; text = "⭐️ 10/10"; ObjectID = "xln-Nr-S3h"; */
+"xln-Nr-S3h.text" = "⭐️ 10/10";
+
+/* Class = "UINavigationItem"; title = "Filme"; ObjectID = "yDQ-BA-ffE"; */
+"yDQ-BA-ffE.title" = "Filme";
