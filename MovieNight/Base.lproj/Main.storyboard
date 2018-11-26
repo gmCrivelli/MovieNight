@@ -19,9 +19,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="center" spacing="38" translatesAutoresizingMaskIntoConstraints="NO" id="Bdc-jl-sCY">
-                                <rect key="frame" x="46" y="87" width="242" height="239"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="38" translatesAutoresizingMaskIntoConstraints="NO" id="Bdc-jl-sCY">
+                                <rect key="frame" x="66.5" y="87" width="242" height="239"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ajustes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bWj-zB-d7w">
                                         <rect key="frame" x="61" y="0.0" width="120.5" height="45.5"/>
@@ -56,6 +55,11 @@
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Bdc-jl-sCY" firstAttribute="top" secondItem="7uN-zh-Cx7" secondAttribute="top" constant="67" id="Ykj-CE-B6L"/>
+                            <constraint firstItem="7uN-zh-Cx7" firstAttribute="bottom" secondItem="Bdc-jl-sCY" secondAttribute="bottom" constant="292" id="dJi-rI-ISG"/>
+                            <constraint firstItem="Bdc-jl-sCY" firstAttribute="centerX" secondItem="7uN-zh-Cx7" secondAttribute="centerX" id="u2h-Jk-dXI"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="7uN-zh-Cx7"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Ajustes" image="settings" id="hd4-Yw-uYp"/>
