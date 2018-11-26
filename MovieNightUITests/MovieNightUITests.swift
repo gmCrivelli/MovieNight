@@ -6,9 +6,11 @@
 //  Copyright © 2018 Movile. All rights reserved.
 //
 
+@testable import MovieNight
 import XCTest
+import FBSnapshotTestCase
 
-class MovieNightUITests: XCTestCase {
+class MovieNightUITests: FBSnapshotTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -16,19 +18,26 @@ class MovieNightUITests: XCTestCase {
         // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
 
-        // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
+        // UI tests must launch the application that they test.
+        // Doing this in setup will make sure it happens for each test method.
         XCUIApplication().launch()
 
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+        // In UI tests it’s important to set the initial state - such as interface orientation -
+        // required for your tests before they run. The setUp method is a good place to do this.
+        recordMode = true
     }
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
+    func testSettingsReloadColor() {
+        // Given
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        XCTAssertNotNil(storyboard)
+        guard let viewC = storyboard.instantiateViewController(
+            withIdentifier: String(describing: AjustesViewController.self)) as? AjustesViewController else {
+            XCTAssert(false)
+            return
+        }
 
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        _ = viewC.view
+        FBSnapshotVerifyView(viewC.view)
     }
-
 }

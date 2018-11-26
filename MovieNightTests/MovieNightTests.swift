@@ -42,7 +42,6 @@ class MovieNightTests: XCTestCase {
                 expectation.fulfill()
             default:
                 print(error)
-                break
             }
         })
 

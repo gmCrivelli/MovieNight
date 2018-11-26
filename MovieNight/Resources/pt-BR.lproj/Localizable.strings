@@ -15,6 +15,7 @@
 "MOVIE" = "Filme";
 "SUMMARY" = "Sinopse:";
 "NO_SUMMARY" = "Sem sinopse!";
+"NO_RATING" = "Sem nota!";
 "NO_CATEGORIES" = "Sem categoria";
 "REMINDER_BUTTON" = "Adicionar lembrete ⏰";
 

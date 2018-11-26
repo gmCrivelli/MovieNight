@@ -35,13 +35,13 @@ class MovieListTableViewCell: UITableViewCell {
         if summary != "" {
             self.summaryLbl.text = summary
         } else {
-            self.summaryLbl.text = "Sem sinopse!"
+            self.summaryLbl.text = Localization.noSummary
         }
 
         if movie.rating >= 0.0 {
             self.ratingLbl.text = "⭐️ \(movie.rating)/10.0"
         } else {
-            self.ratingLbl.text = "⭐️ Sem nota!"
+            self.ratingLbl.text = "⭐️ " + Localization.noRating
         }
 
         if let imageData = movie.image {

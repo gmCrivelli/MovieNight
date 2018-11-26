@@ -15,6 +15,7 @@
 "MOVIE" = "Movie";
 "SUMMARY" = "Summary:";
 "NO_SUMMARY" = "No summary!";
+"NO_RATING" = "No rating!";
 "NO_CATEGORIES" = "No category";
 "REMINDER_BUTTON" = "Set reminder ⏰";
 

@@ -70,6 +70,8 @@ internal enum Localization {
   internal static let noCategories = Localization.tr("Localizable", "NO_CATEGORIES")
   /// No registered movies... yet!
   internal static let noMovies = Localization.tr("Localizable", "NO_MOVIES")
+  /// No rating!
+  internal static let noRating = Localization.tr("Localizable", "NO_RATING")
   /// No summary!
   internal static let noSummary = Localization.tr("Localizable", "NO_SUMMARY")
   /// Whoops! Could not find the trailer for this movie.
