@@ -97,8 +97,8 @@ class MovieListTableViewController: UITableViewController {
     func reloadI18N() {
         self.title = Localization.movies
 
-        self.tabBarController?.toolbarItems?.first?.title = Localization.movies
-        self.tabBarController?.toolbarItems?.last?.title = Localization.settings
+        self.tabBarController?.tabBar.items?.first?.title = Localization.movies
+        self.tabBarController?.tabBar.items?.last?.title = Localization.settings
     }
 
     /// Fetch the movie list from the movie service
